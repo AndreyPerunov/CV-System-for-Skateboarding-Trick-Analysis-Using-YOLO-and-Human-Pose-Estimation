@@ -1,0 +1,8 @@
+artifact_location: file:///C:/Users/Jazz/Documents/GitHub/PoseSketeTrain/runs/mlflow/861634805034110218
+creation_time: 1777978637550
+experiment_id: '861634805034110218'
+last_update_time: 1777978637550
+lifecycle_stage: active
+name: keypoints-detector
+trace_location: null
+workspace: default

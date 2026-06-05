@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/Jazz/Documents/GitHub/PoseSketeTrain/runs/mlflow/861634805034110218/4d3d41c7c8a1433b93e96b35a865f5b0/artifacts
+end_time: 1777996515511
+entry_point_name: ''
+experiment_id: '861634805034110218'
+lifecycle_stage: active
+run_id: 4d3d41c7c8a1433b93e96b35a865f5b0
+run_name: train
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777978637705
+status: 3
+tags: []
+user_id: Jazz
