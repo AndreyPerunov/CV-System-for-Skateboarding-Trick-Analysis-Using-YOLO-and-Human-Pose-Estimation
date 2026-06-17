@@ -1097,3 +1097,92 @@ a {
 .modal-body::-webkit-scrollbar-thumb:hover {
   background: var(--surface-hover);
 }
+
+/* ───────── Responsive ───────── */
+
+/* Tablet / small laptop: stack the two big two-column layouts and let the
+   page scroll instead of locking everything to a 100vh, overflow:hidden shell. */
+@media (max-width: 860px) {
+  body {
+    overflow: auto;
+  }
+  .app {
+    height: auto;
+    min-height: 100vh;
+  }
+  /* <main> sets overflow:hidden inline in layout.tsx — override it so the
+     stacked content can grow past the viewport and scroll with the page. */
+  .app > main {
+    overflow: visible !important;
+  }
+
+  /* Dashboard */
+  .dash {
+    height: auto;
+    overflow: visible;
+    padding: 28px 20px 64px;
+  }
+  /* Stack the cards and reverse them so Library (2nd in DOM) sits on top */
+  .action-grid {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  /* Viewer: video panel on top, analysis panel below */
+  .viewer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+  .viewer-left,
+  .viewer-right {
+    overflow: visible;
+  }
+  .viewer-left {
+    padding: 14px 14px 4px;
+  }
+  .viewer-right {
+    padding: 10px 14px 24px;
+  }
+  /* In column flow there's no parent height to flex against, so give the
+     frame an aspect ratio; the video letterboxes inside it for any clip. */
+  .video-frame {
+    flex: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 65vh;
+  }
+  .right-scroll {
+    overflow-y: visible;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .topbar {
+    padding: 0 12px;
+    gap: 10px;
+  }
+  /* Drop the "API calls" caption; keep the live count */
+  .stats-badge .muted {
+    display: none;
+  }
+
+  .dash {
+    padding: 20px 14px 56px;
+  }
+  .dash-hello h1 {
+    font-size: 19px;
+  }
+
+  /* 4-up metrics are too cramped on a phone — go 2-up */
+  .trick-card .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .trick-card .name {
+    font-size: 21px;
+  }
+}

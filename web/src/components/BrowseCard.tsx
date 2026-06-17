@@ -62,6 +62,7 @@ export function BrowseCard() {
               disabled={!isPlayable || loadingId !== null}
               title={isPlayable ? `Open ${g.name}` : "Placeholder — not playable"}
               style={{
+                minHeight: 50,
                 borderRadius: 8,
                 border: "1px solid var(--border)",
                 background: "var(--bg-2)",
