@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/"
+  },
   openGraph: {
     type: "website",
     url: SITE_URL,
@@ -31,7 +34,7 @@ export const metadata: Metadata = {
     siteName: SITE_TITLE,
     images: [
       {
-        url: "/image-for-opengraph.png",
+        url: "/opengraph.jpg",
         width: 1200,
         height: 630,
         alt: "PoseSkateTrain — skateboard trick analysis"
@@ -42,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ["/image-for-opengraph.png"]
+    images: ["/opengraph.jpg"]
   }
 }
 
