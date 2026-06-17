@@ -1024,6 +1024,50 @@ a {
   font-size: 12.5px;
 }
 
+/* ---- Demo build: disabled features ---- */
+.action-card.is-disabled {
+  opacity: 0.72;
+}
+.action-card.is-disabled:hover {
+  border-color: var(--border);
+}
+.demo-pill {
+  margin-left: auto;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.demo-banner {
+  margin: 14px 0 2px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px dashed var(--border-strong);
+  background: color-mix(in oklch, var(--accent) 6%, var(--surface));
+  color: var(--text-2);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+.dropzone.is-locked {
+  cursor: not-allowed;
+  opacity: 0.55;
+  filter: grayscale(0.4);
+}
+.stats-badge.is-off .dot {
+  background: var(--muted);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--muted) 22%, transparent);
+}
+.stats-badge.is-off .num {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .btn-sm {
   padding: 4px 10px;
   font-size: 12px;

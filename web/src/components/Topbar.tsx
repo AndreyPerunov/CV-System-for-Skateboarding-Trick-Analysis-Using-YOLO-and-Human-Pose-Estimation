@@ -2,28 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { getStats } from "@/lib/api";
 
 export function Topbar() {
   const pathname = usePathname();
-  const [calls, setCalls] = useState<number | null>(null);
-
-  useEffect(() => {
-    let alive = true;
-    const tick = async () => {
-      try {
-        const s = await getStats();
-        if (alive) setCalls(s.total_requests);
-      } catch {
-        if (alive) setCalls(null);
-      }
-    };
-    tick();
-    const iv = setInterval(tick, 5000);
-    return () => { alive = false; clearInterval(iv); };
-  }, [pathname]);
-
   const onViewer = pathname?.startsWith("/viewer");
 
   return (
@@ -44,9 +25,9 @@ export function Topbar() {
         )}
       </nav>
       <div className="topbar-spacer" />
-      <div className="stats-badge" title="Backend API calls">
+      <div className="stats-badge is-off" title="Backend API is disabled in the demo build">
         <span className="dot" />
-        <span className="num">{calls == null ? "—" : calls.toLocaleString()}</span>
+        <span className="num">off</span>
         <span className="muted">API calls</span>
       </div>
     </header>
