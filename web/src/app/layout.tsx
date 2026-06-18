@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google"
 import { Topbar } from "@/components/Topbar"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const plexSans = IBM_Plex_Sans({
@@ -61,6 +62,7 @@ export default function RootLayout({
           <Topbar />
           <main style={{ minHeight: 0, overflow: "hidden" }}>{children}</main>
         </div>
+        <Analytics />
       </body>
     </html>
   )
